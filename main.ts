@@ -1,5 +1,3 @@
-import { rawListeners } from "process";
-
 const readline = require("readline");
 const inout = readline.createInterface({
     input: process.stdin,
@@ -65,19 +63,6 @@ async function guessNumber(randomNumber) {
         loops ++;
         guessNumber(randomNumber);
     });
-}
-
-async function startHere2() {
-    const randomNumber = Math.floor(Math.random() * 100) + 1;
-    
-    console.debug('Welcome to Number Guessing game by Adam Chlebek.');
-    console.debug(randomNumber)
-    process.stdout.write("> ");
-    for await (const userInput of inout) {
-
-        process.stdout.write("> ");
-        loops += 1;
-    }
 }
 
 startHere();
